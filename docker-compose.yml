@@ -1,0 +1,21 @@
+version: '3'
+services:
+  kmsencrypt-sample:
+    image: kmsencrypt-sample
+    build:
+      dockerfile: ./Dockerfile
+    environment:
+      DATABASE_URL: "mysql://root:root@host.docker.internal:3306/test"
+      AWS_ACCESS_KEY_ID: '${AWS_ACCESS_KEY_ID}'
+      AWS_SECRET_ACCESS_KEY: '${AWS_SECRET_ACCESS_KEY}'
+      KMS_KEY_ID: '${KMS_KEY_ID}'
+    ports:
+      - '3000:3000'
+
+  db:
+    image: mysql:8
+    command: mysqld --character-set-server=utf8mb4
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'

@@ -28,18 +28,35 @@ $ npm run start:dev
 
 ## Encrypt Request
 
-```
-curl -X POST -H "Content-Type: application/json" -d '{"plaintext":"${text}"}' localhost:3000
+```bash
+$ curl -X POST -H "Content-Type: application/json" -d '{"plaintext":"${text}"}' localhost:3000
 ```
 
 ## Decrypt Request
 
-```
-curl localhost:3000/${id}
+```bash
+$ curl localhost:3000/${id}
 ```
 
-## Watch Database
+## View Database
 
 ```bash
 $ npm run studio
 ```
+
+## Docker Artifacts
+
+```bash
+$ docker pull ogules/kmsencrypt-sample:latest
+```
+
+### Environment Variables
+
+| Environment Variable | Description |
+| --- | --- |
+| `DATABASE_URL` | prisma database url |
+| `AWS_ACCESS_KEY_ID` | AWS Accesskey |
+| `AWS_SECRET_ACCESS_KEY` | AWS Secret Accesskey |
+| `KMS_KEY_ID` | KMS Key ID |
+
+

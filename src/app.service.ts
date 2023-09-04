@@ -4,11 +4,7 @@ import { User } from '@prisma/client';
 import { PrismaService } from './prisma.service';
 
 const client = new KMSClient({
-  region: 'ap-northeast-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? '',
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
-  },
+  region: process.env.AWS_DEFAULT_REGION || 'ap-northeast-1',
 });
 
 @Injectable()
@@ -16,7 +12,7 @@ export class AppService {
   constructor(private readonly prismaService: PrismaService) {}
 
   getHello(): string {
-    return 'Hello World!';
+    return 'See README.md for usage!';
   }
 
   /**

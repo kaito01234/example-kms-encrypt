@@ -11,6 +11,8 @@ services:
       KMS_KEY_ID: '${KMS_KEY_ID}'
     ports:
       - '3000:3000'
+    depends_on:
+      - db
 
   db:
     image: mysql:8

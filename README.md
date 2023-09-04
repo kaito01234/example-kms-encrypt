@@ -13,7 +13,7 @@ $ npm run generate
 
 ```bash
 $ docker compose up -d db
-$ npm run generate
+$ npm run reset
 ```
 
 ## Running the app

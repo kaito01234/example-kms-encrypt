@@ -1,19 +1,21 @@
 ## Description
 
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/kaito01234/KMSEncryptSample)
+
 KMSで文字列を暗号化するためのサンプル
 
 ## Installation
 
 ```bash
 $ npm install
-$ npm run generate
+$ npm run db:generate
 ```
 
 ## Setup Database
 
 ```bash
 $ docker compose up -d db
-$ npm run reset
+$ npm run db:reset
 ```
 
 ## Running the app
@@ -41,7 +43,7 @@ $ curl localhost:3000/decrypt?id=${id}
 ## View Database
 
 ```bash
-$ npm run studio
+$ npm run db:studio
 ```
 
 ## Docker Artifacts

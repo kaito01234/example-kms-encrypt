@@ -5,7 +5,7 @@ services:
     build:
       dockerfile: ./Dockerfile
     environment:
-      DATABASE_URL: "mysql://root:root@host.docker.internal:3306/test"
+      DATABASE_URL: 'mysql://root:root@host.docker.internal:3306/test'
       AWS_ACCESS_KEY_ID: '${AWS_ACCESS_KEY_ID}'
       AWS_SECRET_ACCESS_KEY: '${AWS_SECRET_ACCESS_KEY}'
       KMS_KEY_ID: '${KMS_KEY_ID}'

@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 COPY prisma ./
-RUN npm run generate
+RUN npm run db:generate
 COPY . .
 RUN npm run build
 
